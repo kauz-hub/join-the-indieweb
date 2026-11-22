@@ -25,6 +25,7 @@ Static hosts serve HTML, CSS, JavaScript and images. They usually don't run a da
 | [Neocities](https://neocities.org/) | Edit or upload files through a web interface. Great for handmade homepages. |
 | [Nekoweb](https://nekoweb.org/) | Small-web-focused static hosting. |
 | [GitHub Pages](https://pages.github.com/) | Store files in Git and publish from a repository. |
+| [Codeberg Pages](https://docs.codeberg.org/codeberg-pages/) | Static publishing with the nonprofit Codeberg forge. Read current git-pages setup instructions and eligibility. |
 | [GitLab Pages](https://docs.gitlab.com/user/project/pages/) | Publish from a GitLab project using CI. |
 | [Cloudflare Pages](https://pages.cloudflare.com/) | Upload or build a static project with Git integration. |
 | [Netlify](https://www.netlify.com/) | Git deployments or manual uploads. |
@@ -60,3 +61,5 @@ Before paying for anything, ask:
 - Can I leave without losing my address or years of work?
 
 If you're still unsure, try a free hosted page or blog and publish something before researching more platforms.
+
+For detailed starting paths, see [Neocities, Nekoweb and Bear Blog](11-three-ways-to-start.md).
