@@ -23,3 +23,5 @@ The existing Markdown files in `guides/`, `RESOURCES.md`, `INSPIRATION.md`, `CON
 The website links back to the original GitHub repository. If you move or fork it, change the repository URL in `build_website.py` and regenerate the HTML.
 
 The site makes no analytics requests. The color theme and checklist preferences are stored only in the reader's browser, when local storage is available.
+
+The theme is initialized in the document head before external stylesheets load, with a CSS fallback that honors the system preference when scripting is unavailable. Keep that early initialization in every page to prevent a saved dark theme from briefly rendering in light mode. The site uses no animated transitions or smooth scrolling. Run `node test-theme.cjs` after rebuilding to check theme initialization across all pages. The test covers saved preferences, system preferences and unavailable browser storage; it is a logic check, not a browser video or photosensitivity certification.

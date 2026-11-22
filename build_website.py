@@ -7,6 +7,14 @@ import subprocess
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'docs'
 DOCS.mkdir(exist_ok=True)
+# Paint the saved theme before any external stylesheet or deferred script loads.
+# Use the same color tokens as style.css, including a CSS-only dark fallback.
+base_css = (DOCS / 'style.css').read_text(encoding='utf-8')
+light = re.search(r':root\{([^}]+)\}', base_css).group(1)
+dark = re.search(r'\[data-theme="dark"\]\{([^}]+)\}', base_css).group(1)
+THEME_HEAD = f'''<meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f7f7ed" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#17251e" media="(prefers-color-scheme: dark)">
+<style>:root{{{light};background-color:var(--paper);color:var(--ink)}}:root[data-theme="dark"]{{{dark};background-color:var(--paper)}}@media(prefers-color-scheme:dark){{:root:not([data-theme]){{{dark};background-color:var(--paper)}}}}html,body{{background-color:var(--paper);color:var(--ink)}}</style>
+<script>(function(){{var t;try{{t=localStorage.getItem('indieweb-theme')}}catch(e){{}}if(t!=='dark'&&t!=='light'){{try{{t=sessionStorage.getItem('indieweb-theme')}}catch(e){{}}}}if(t!=='dark'&&t!=='light')t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){{m.content=t==='dark'?'#17251e':'#f7f7ed'}})}})();</script>'''
 BUTTONS = DOCS / 'buttons'
 BUTTONS.mkdir(exist_ok=True)
 for slug, top, bottom, color in [
@@ -45,7 +53,7 @@ def frame(title, desc, page, content, section=''):
     links = ''.join(f'<li><a href="{url}"'+(' aria-current="page"' if page == url else '')+f'>{label}</a></li>' for url,label in nav)
     aside = f'''<aside class="leftbar"><nav aria-label="Main navigation"><h2>site map</h2><ul class="site-map">{links}</ul></nav><hr><p class="small"><a href="https://github.com/kauz-hub/join-the-indieweb">view source</a><br><a href="contributing.html">suggest a link</a></p><hr><div class="appearance"><button class="theme" type="button" data-toggle-theme aria-label="Switch color theme">☾</button> <span class="small">theme</span></div><div class="link-me"><p class="small">link to this site:</p><a href="index.html"><img src="buttons/join-the-indieweb.svg" width="88" height="31" alt="Join the IndieWeb"></a></div></aside>'''
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(title)} | Join the IndieWeb</title><meta name="description" content="{esc(desc)}"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="retro.css"><link rel="stylesheet" href="personal.css"><script src="site.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{THEME_HEAD}<title>{esc(title)} | Join the IndieWeb</title><meta name="description" content="{esc(desc)}"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="retro.css"><link rel="stylesheet" href="personal.css"><script src="site.js" defer></script></head>
 <body><a class="skip" href="#main">Skip to content</a><div class="webpage"><header class="sitebanner"><div class="banner-art"><a class="brand" href="index.html"><img src="favicon.svg" alt=""><span>join the <strong>indieweb</strong></span></a><p>notes and links for making your own website</p></div></header>
 <div class="site-layout">{aside}<main id="main">{content}</main></div><footer class="foot"><div><p>© 2026 · <a href="license.html">CC BY 4.0</a> · <a href="https://github.com/kauz-hub/join-the-indieweb">source</a> · <a href="contributing.html">contribute</a> · <a href="#">back to top</a></p></div></footer></div></body></html>'''
 
@@ -54,7 +62,7 @@ def card(i):
     return f'<li class="directory-entry" data-chapter><a href="{slug}.html">{esc(title)}</a><span class="description"> {esc(desc)}</span></li>'
 
 def save(name, title, desc, body, section=''):
-    (DOCS/name).write_text(frame(title, desc, name, body, section), encoding='utf-8')
+    (DOCS/name).write_text(frame(title, desc, name, body.replace(' — ', ': '), section), encoding='utf-8')
 
 home = '''<div class="home-grid"><div class="home-main"><section class="welcome"><h1>Welcome!</h1><p>This site is a collection of things to read and try if you're curious about the IndieWeb. It started as a <a href="https://github.com/kauz-hub/join-the-indieweb">GitHub repo</a> and now has its own little home.</p><p>There's information here on starting a blog, making a personal website, reading RSS feeds and finding other sites. Most of it is aimed at beginners.</p><p>If you've never heard of the IndieWeb before, <a href="01-what-is-the-indieweb.html">read this first</a>.</p></section>
 <hr><section><h2>Getting started</h2><ul class="directory-list">'''+card(11)+card(10)+card(4)+card(12)+card(13)+'''</ul><p><a href="guide.html">Full table of contents</a></p></section>
