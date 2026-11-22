@@ -54,6 +54,15 @@ A curated starting point. Prefer official docs for setup and current plan detail
 - [Wiby](https://wiby.me/): discover small websites.
 - [Internet Archive](https://archive.org/): historical web and digital collections.
 
+## More paths into the independent web
+
+- [Neocities](https://neocities.org/), [Nekoweb](https://nekoweb.org/) and [Bear Blog](https://bearblog.dev/): compare these in the [beginner platform guide](guides/11-three-ways-to-start.md).
+- [Micro.blog](https://micro.blog/), [WriteFreely](https://writefreely.org/) and [Listed](https://listed.to/): see [blogging formats](guides/10-blogging-and-microblogging.md).
+- [Mastodon](https://joinmastodon.org/), [Pixelfed](https://pixelfed.org/), [Bluesky](https://bsky.app/), [Lemmy](https://join-lemmy.org/) and [PeerTube](https://joinpeertube.org/): see [decentralized social media](guides/12-decentralized-social.md).
+- [Marginalia Search](https://marginalia-search.com/), [indieblog.page](https://indieblog.page/) and [IndieSeas](https://indieseas.net/): see [small-web discovery](guides/13-discovery.md).
+- [Personal web toolkit](guides/14-personal-web-toolkit.md): guestbooks, forms, image services, buttons, link pages and more.
+- [Inspiration gallery](INSPIRATION.md): examples of real homepages, blogs, photo galleries and other personal pages.
+
 See [platform choices](guides/02-choose-a-platform.md) for hosting and blog services, [feeds](guides/06-publishing-and-feeds.md) for feed readers and [community](guides/08-community.md) for more directories.
 
 ## Reading standards
