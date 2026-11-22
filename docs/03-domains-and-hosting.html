@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Domains &amp; hosting | Join the IndieWeb</title><meta name="description" content="Register an address, understand DNS and publish a site."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="site.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="index.html"><img src="favicon.svg" alt="">Join the IndieWeb</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="resources.html">Resources</a><a href="inspiration.html">Inspiration</a><button class="theme" type="button" data-toggle-theme aria-label="Switch color theme">☾</button></nav></div></header>
+<main id="main"><div class="wrap reading"><aside class="sidebar" aria-label="Chapter navigation"><h2>In the guide</h2><a href="guide.html">All chapters</a><a href="01-what-is-the-indieweb.html">01 · What is the IndieWeb?</a><a href="02-choose-a-platform.html">02 · Choose your platform</a><a href="03-domains-and-hosting.html" aria-current="page">03 · Domains &amp; hosting</a><a href="04-learn-the-web.html">04 · Learn the web</a><a href="05-build-your-site.html">05 · Build your personal site</a><a href="06-publishing-and-feeds.html">06 · Publishing &amp; RSS feeds</a><a href="07-indieweb-standards.html">07 · IndieWeb standards</a><a href="08-community.html">08 · Community &amp; connections</a><a href="09-care-for-your-site.html">09 · Care for your site</a><a href="10-blogging-and-microblogging.html">10 · Blogging &amp; microblogging</a><a href="11-three-ways-to-start.html">11 · Three ways to start</a><a href="12-decentralized-social.html">12 · Decentralized social media</a><a href="13-discovery.html">13 · Discover the small web</a><a href="14-personal-web-toolkit.html">14 · Personal web toolkit</a></aside><article class="article"><p class="eyebrow">Chapter 03 · Field guide</p><h1 id="3-domains-dns-and-hosting">3. Domains, DNS and hosting</h1>
+<p>A domain is your address (<code>example.com</code>). Hosting is where your website lives. DNS tells browsers which host serves your address. You can buy a domain from one company and host your site with another.</p>
+<h2 id="register-a-domain">Register a domain</h2>
+<ol type="1">
+<li>Choose a name you can keep for years. An alias is fine.</li>
+<li>Compare the renewal price, transfer policy, privacy options and supported extensions. Registrars include <a href="https://porkbun.com/">Porkbun</a>, <a href="https://www.namecheap.com/">Namecheap</a> and <a href="https://www.cloudflare.com/products/registrar/">Cloudflare Registrar</a>.</li>
+<li>Register in an account you control using accurate required details. Review what the registry makes public, since policies differ by extension.</li>
+<li>Enable multifactor authentication, keep recovery information offline and set renewal reminders. A lapse can cost you your address.</li>
+<li>Keep the receipt and record your registrar, host and DNS provider.</li>
+</ol>
+<p>You can start without purchasing anything. A provider subdomain is suitable for learning, but a registered domain is more portable.</p>
+<h2 id="connect-your-domain">Connect your domain</h2>
+<p>Follow the documentation for your actual host. Don't copy DNS values from an unrelated tutorial.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>DNS record</th>
+<th>Common purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A / AAAA</td>
+<td>Point a name to an IPv4 / IPv6 address.</td>
+</tr>
+<tr class="even">
+<td>CNAME</td>
+<td>Alias a name to another hostname, commonly for <code>www</code>.</td>
+</tr>
+<tr class="odd">
+<td>TXT</td>
+<td>Ownership verification and other text-based records.</td>
+</tr>
+<tr class="even">
+<td>MX</td>
+<td>Mail delivery. Keep existing mail records when moving a website.</td>
+</tr>
+<tr class="odd">
+<td>NS</td>
+<td>Identify authoritative DNS servers.</td>
+</tr>
+</tbody>
+</table></div>
+<ol type="1">
+<li>Add and verify the custom domain with the host.</li>
+<li>Enter only the records required by that host in your DNS dashboard.</li>
+<li>Wait for the host to verify DNS and issue its HTTPS certificate.</li>
+<li>Open your address with HTTPS and test the <code>www</code> and non-<code>www</code> versions. Pick one canonical address and redirect the other when supported.</li>
+</ol>
+<h2 id="publish-with-github-pages">Publish with GitHub Pages</h2>
+<p>For a free public personal site, create a repository named <code>YOUR-USERNAME.github.io</code>. Add <code>index.html</code>, images and CSS as needed. Open repository <strong>Settings → Pages</strong> and choose the source branch and folder, following the <a href="https://docs.github.com/en/pages/quickstart">official quickstart</a>.</p>
+<p>Use the <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">official custom-domain guide</a> to configure records. Verify domain ownership and avoid wildcard records. <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https">Enable HTTPS</a>.</p>
+<p>Project sites may live below a path such as <code>username.github.io/project/</code>. Use correct relative asset paths and check your generator's base URL setting.</p>
+<h2 id="publish-by-uploading-files">Publish by uploading files</h2>
+<p>On a host such as Neocities or Nekoweb, create a site, open its file manager and upload <code>index.html</code> plus your CSS and assets. Keep the folder layout intact. You can usually preview locally first by opening the HTML file in a browser.</p>
+<h2 id="move-hosts-without-breaking-your-site">Move hosts without breaking your site</h2>
+<ul>
+<li>Back up content, images, feeds and configuration before migration.</li>
+<li>Deploy to the new host and test its temporary address.</li>
+<li>Maintain old URLs or configure permanent redirects.</li>
+<li>Update necessary DNS records, preserve mail settings and verify HTTPS.</li>
+<li>Keep the old hosting until the new site works and DNS has settled.</li>
+</ul>
+<p>Read <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Publishing_your_website">MDN's publishing guide</a> for the basics.</p>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a href="02-choose-a-platform.html">Previous chapter</a><a href="04-learn-the-web.html">Next chapter</a></nav></article></div></main><footer class="foot"><div class="wrap"><p>Made for people who make the web. <br>Independent guide • CC BY 4.0</p><p><a href="https://github.com/kauz-hub/join-the-indieweb">GitHub repository</a><a href="contributing.html">Contribute</a><a href="license.html">License</a><a href="https://indieweb.org/">IndieWeb wiki</a></p></div></footer></body></html>

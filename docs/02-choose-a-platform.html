@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Choose your platform | Join the IndieWeb</title><meta name="description" content="Compare handmade sites, hosted blogs, static generators and CMSs."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="site.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="index.html"><img src="favicon.svg" alt="">Join the IndieWeb</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="resources.html">Resources</a><a href="inspiration.html">Inspiration</a><button class="theme" type="button" data-toggle-theme aria-label="Switch color theme">☾</button></nav></div></header>
+<main id="main"><div class="wrap reading"><aside class="sidebar" aria-label="Chapter navigation"><h2>In the guide</h2><a href="guide.html">All chapters</a><a href="01-what-is-the-indieweb.html">01 · What is the IndieWeb?</a><a href="02-choose-a-platform.html" aria-current="page">02 · Choose your platform</a><a href="03-domains-and-hosting.html">03 · Domains &amp; hosting</a><a href="04-learn-the-web.html">04 · Learn the web</a><a href="05-build-your-site.html">05 · Build your personal site</a><a href="06-publishing-and-feeds.html">06 · Publishing &amp; RSS feeds</a><a href="07-indieweb-standards.html">07 · IndieWeb standards</a><a href="08-community.html">08 · Community &amp; connections</a><a href="09-care-for-your-site.html">09 · Care for your site</a><a href="10-blogging-and-microblogging.html">10 · Blogging &amp; microblogging</a><a href="11-three-ways-to-start.html">11 · Three ways to start</a><a href="12-decentralized-social.html">12 · Decentralized social media</a><a href="13-discovery.html">13 · Discover the small web</a><a href="14-personal-web-toolkit.html">14 · Personal web toolkit</a></aside><article class="article"><p class="eyebrow">Chapter 02 · Field guide</p><h1 id="2-choose-a-platform">2. Choose a platform</h1>
+<p>Pick the platform that makes publishing easiest for you. You can move later if your content and domain are portable.</p>
+<h2 id="hosted-writing-platforms">Hosted writing platforms</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Best for</th>
+<th>Before choosing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://bearblog.dev/">Bear Blog</a></td>
+<td>Minimal text-focused blogging</td>
+<td>Review <a href="https://docs.bearblog.dev/">customization and domain docs</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://pika.page/">Pika</a></td>
+<td>A simple managed blog</td>
+<td>Review <a href="https://pika.page/manual">manual</a>, including export and Micropub</td>
+</tr>
+<tr class="odd">
+<td><a href="https://micro.blog/">Micro.blog</a></td>
+<td>Blogging with community and cross-posting features</td>
+<td>Review <a href="https://help.micro.blog/">help</a> and plans</td>
+</tr>
+<tr class="even">
+<td><a href="https://write.as/">Write.as</a></td>
+<td>Writing with a minimal interface</td>
+<td>Compare domain and export features</td>
+</tr>
+<tr class="odd">
+<td><a href="https://wordpress.com/">WordPress.com</a></td>
+<td>Managed CMS with editing tools</td>
+<td>Check domain, plugin and export limits by plan</td>
+</tr>
+<tr class="even">
+<td><a href="https://ghost.org/">Ghost</a></td>
+<td>Publication and newsletter workflows</td>
+<td>Compare hosted and self-managed editions</td>
+</tr>
+<tr class="odd">
+<td><a href="https://omg.lol/">omg.lol</a></td>
+<td>Personal identity, profile and small-site services</td>
+<td>Review <a href="https://omg.lol/info">documentation</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="static-hosting">Static hosting</h2>
+<p>Static hosts serve HTML, CSS, JavaScript and images. They usually don't run a database or server-side scripts for you.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://neocities.org/">Neocities</a></td>
+<td>Edit or upload files through a web interface. Great for handmade homepages.</td>
+</tr>
+<tr class="even">
+<td><a href="https://nekoweb.org/">Nekoweb</a></td>
+<td>Small-web-focused static hosting.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://pages.github.com/">GitHub Pages</a></td>
+<td>Store files in Git and publish from a repository.</td>
+</tr>
+<tr class="even">
+<td><a href="https://docs.codeberg.org/codeberg-pages/">Codeberg Pages</a></td>
+<td>Static publishing with the nonprofit Codeberg forge. Read current git-pages setup instructions and eligibility.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://docs.gitlab.com/user/project/pages/">GitLab Pages</a></td>
+<td>Publish from a GitLab project using CI.</td>
+</tr>
+<tr class="even">
+<td><a href="https://pages.cloudflare.com/">Cloudflare Pages</a></td>
+<td>Upload or build a static project with Git integration.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.netlify.com/">Netlify</a></td>
+<td>Git deployments or manual uploads.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Check current limits on bandwidth, storage, custom domains, build minutes and acceptable use. Some free tiers are enough for a personal site, while custom domains or added features may require payment.</p>
+<h2 id="static-site-generators">Static site generators</h2>
+<p>Once copying HTML for each post becomes tedious, a generator can turn Markdown and shared layouts into HTML files.</p>
+<ul>
+<li><a href="https://www.11ty.dev/">Eleventy</a>: flexible JavaScript-based generator.</li>
+<li><a href="https://gohugo.io/">Hugo</a>: standalone binary, themes and Go templates.</li>
+<li><a href="https://jekyllrb.com/">Jekyll</a>: Markdown, Liquid and Ruby, with a long history on GitHub Pages.</li>
+<li><a href="https://docs.astro.build/">Astro</a>: component-based content sites with optional interactivity.</li>
+<li><a href="https://www.getzola.org/">Zola</a>: standalone Rust-based generator.</li>
+</ul>
+<p>Generators are not hosting services. Keep source content and build configuration as well as published output.</p>
+<h2 id="dynamic-cms-and-self-hosting">Dynamic CMS and self-hosting</h2>
+<p><a href="https://wordpress.org/">WordPress.org</a>, <a href="https://ghost.org/">Ghost</a> and <a href="https://withknown.com/">Known</a> can manage posts and dynamic features. Managed hosting reduces operational work. A VPS gives more control but requires keeping the OS, applications, certificates and backups healthy.</p>
+<p>For WordPress, read the <a href="https://indieweb.org/Getting_Started_on_WordPress">IndieWeb WordPress walkthrough</a>. Check plugin and theme compatibility before installing anything.</p>
+<h2 id="decision-checklist">Decision checklist</h2>
+<p>Before paying for anything, ask:</p>
+<ul>
+<li>Can I use a domain I control? Can I export posts, images and redirects?</li>
+<li>Can readers subscribe without an account?</li>
+<li>Can I publish what matters to me without changing my workflow every month?</li>
+<li>Is the price sustainable after any introductory offer?</li>
+<li>Can I leave without losing my address or years of work?</li>
+</ul>
+<p>If you're still unsure, try a free hosted page or blog and publish something before researching more platforms.</p>
+<p>For detailed starting paths, see <a href="11-three-ways-to-start.html">Neocities, Nekoweb and Bear Blog</a>.</p>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a href="01-what-is-the-indieweb.html">Previous chapter</a><a href="03-domains-and-hosting.html">Next chapter</a></nav></article></div></main><footer class="foot"><div class="wrap"><p>Made for people who make the web. <br>Independent guide • CC BY 4.0</p><p><a href="https://github.com/kauz-hub/join-the-indieweb">GitHub repository</a><a href="contributing.html">Contribute</a><a href="license.html">License</a><a href="https://indieweb.org/">IndieWeb wiki</a></p></div></footer></body></html>

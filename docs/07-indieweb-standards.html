@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IndieWeb standards | Join the IndieWeb</title><meta name="description" content="Microformats, Webmentions, IndieAuth and other optional tools."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="site.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="index.html"><img src="favicon.svg" alt="">Join the IndieWeb</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="resources.html">Resources</a><a href="inspiration.html">Inspiration</a><button class="theme" type="button" data-toggle-theme aria-label="Switch color theme">☾</button></nav></div></header>
+<main id="main"><div class="wrap reading"><aside class="sidebar" aria-label="Chapter navigation"><h2>In the guide</h2><a href="guide.html">All chapters</a><a href="01-what-is-the-indieweb.html">01 · What is the IndieWeb?</a><a href="02-choose-a-platform.html">02 · Choose your platform</a><a href="03-domains-and-hosting.html">03 · Domains &amp; hosting</a><a href="04-learn-the-web.html">04 · Learn the web</a><a href="05-build-your-site.html">05 · Build your personal site</a><a href="06-publishing-and-feeds.html">06 · Publishing &amp; RSS feeds</a><a href="07-indieweb-standards.html" aria-current="page">07 · IndieWeb standards</a><a href="08-community.html">08 · Community &amp; connections</a><a href="09-care-for-your-site.html">09 · Care for your site</a><a href="10-blogging-and-microblogging.html">10 · Blogging &amp; microblogging</a><a href="11-three-ways-to-start.html">11 · Three ways to start</a><a href="12-decentralized-social.html">12 · Decentralized social media</a><a href="13-discovery.html">13 · Discover the small web</a><a href="14-personal-web-toolkit.html">14 · Personal web toolkit</a></aside><article class="article"><p class="eyebrow">Chapter 07 · Field guide</p><h1 id="7-connect-your-site-indieweb-standards">7. Connect your site: IndieWeb standards</h1>
+<p>This chapter is optional. You can own your site and publish for years without implementing every protocol.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Technology</th>
+<th>What it enables</th>
+<th>When to add it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://microformats.org/wiki/microformats2">Microformats2</a></td>
+<td>Structured information inside HTML</td>
+<td>Once your homepage or blog exists</td>
+</tr>
+<tr class="even">
+<td><a href="https://indieweb.org/rel-me">rel-me</a></td>
+<td>Relationships between your own profiles</td>
+<td>When identifying accounts you control</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.w3.org/TR/webmention/">Webmention</a></td>
+<td>Notify another site that you linked to it</td>
+<td>When you want cross-site replies and mentions</td>
+</tr>
+<tr class="even">
+<td><a href="https://indieauth.spec.indieweb.org/">IndieAuth</a></td>
+<td>Use your web address in a sign-in flow</td>
+<td>When a service or publishing client needs it</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.w3.org/TR/micropub/">Micropub</a></td>
+<td>Publish from compatible third-party apps</td>
+<td>When you want more ways to write</td>
+</tr>
+<tr class="even">
+<td><a href="https://microsub.spec.indieweb.org/">Microsub</a></td>
+<td>Separate feed-reader clients and subscription servers</td>
+<td>When you want an interoperable reader</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.w3.org/TR/websub/">WebSub</a></td>
+<td>Push updates to subscribers</td>
+<td>When low-latency feed delivery matters</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="step-1-mark-up-your-profile">Step 1: mark up your profile</h2>
+<p>Microformats add class names to visible HTML. An <code>h-card</code> describes a person or organization. An <code>h-entry</code> describes a post or similar entry. The <code>p-</code> prefix describes plain text, <code>u-</code> a URL, <code>dt-</code> a date/time, and <code>e-</code> embedded markup.</p>
+<pre class="html"><code>&lt;div class=&quot;h-card&quot;&gt;
+  &lt;a class=&quot;p-name u-url&quot; href=&quot;https://example.com/&quot;&gt;Your name&lt;/a&gt;
+  &lt;p class=&quot;p-note&quot;&gt;I write about books and the web.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>Only expose information you actually want public. See <a href="https://microformats.org/wiki/h-card">h-card</a>, <a href="https://microformats.org/wiki/h-entry">h-entry</a> and <a href="https://microformats.org/wiki/h-feed">h-feed</a>.</p>
+<h2 id="step-2-give-a-post-useful-metadata">Step 2: give a post useful metadata</h2>
+<pre class="html"><code>&lt;article class=&quot;h-entry&quot;&gt;
+  &lt;h1 class=&quot;p-name&quot;&gt;My first post&lt;/h1&gt;
+  &lt;a class=&quot;p-author h-card&quot; href=&quot;https://example.com/&quot;&gt;Your name&lt;/a&gt;
+  &lt;a class=&quot;u-url&quot; href=&quot;https://example.com/blog/first/&quot;&gt;
+    &lt;time class=&quot;dt-published&quot; datetime=&quot;2026-11-21&quot;&gt;21 Nov 2026&lt;/time&gt;
+  &lt;/a&gt;
+  &lt;div class=&quot;e-content&quot;&gt;&lt;p&gt;Hello, web.&lt;/p&gt;&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+<p>Replace example URLs and names with your own. Use <a href="https://indiewebify.me/">IndieWebify.me</a> or <a href="https://microformats.io/">microformats.io</a> to inspect your markup.</p>
+<h2 id="step-3-link-your-identities">Step 3: link your identities</h2>
+<p>Add <code>rel="me"</code> to links to profiles that you control, and where supported, link back to your homepage from those profiles. This helps establish relationships, but a rel-me link alone does not create an IndieAuth server or guarantee that every service will accept it. See <a href="https://indieweb.org/How_to_set_up_web_sign-in">web sign-in</a> and your actual authentication provider's setup instructions.</p>
+<h2 id="step-4-try-webmentions">Step 4: try Webmentions</h2>
+<p>A Webmention sender notifies the target site of a source URL that links to it. The receiver checks that relationship. It can choose to display the mention, extract a reply or ignore it.</p>
+<p>On a static site, you can use <a href="https://webmention.io/">Webmention.io</a> as an external receiving service. Follow its setup instructions and publish the endpoint it assigns you. Use compatible tooling to send mentions, and display approved mentions from cached or retrieved data. Receiving and displaying are separate tasks. <a href="https://indieweb.org/Webmention">IndieWeb's Webmention page</a> has examples for many stacks.</p>
+<p>Moderate incoming messages. Render untrusted names, content and URLs safely. Keep private API tokens in server or build secrets, never HTML, JavaScript shipped to browsers or public Git commits.</p>
+<h2 id="step-5-advanced-publishing-and-reading">Step 5: advanced publishing and reading</h2>
+<p>Micropub is an API for creating and managing posts using authorized clients. Try a compatible CMS or publishing service before building an endpoint yourself. <a href="https://quill.p3k.io/">Quill</a> is an example client. Microsub provides an architectural separation between subscription backends and reader interfaces. Pick an existing implementation and check current support.</p>
+<p>Full reference: <a href="https://indieweb.org/specifications">IndieWeb specifications</a> and <a href="https://spec.indieweb.org/">spec.indieweb.org</a>.</p>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a href="06-publishing-and-feeds.html">Previous chapter</a><a href="08-community.html">Next chapter</a></nav></article></div></main><footer class="foot"><div class="wrap"><p>Made for people who make the web. <br>Independent guide • CC BY 4.0</p><p><a href="https://github.com/kauz-hub/join-the-indieweb">GitHub repository</a><a href="contributing.html">Contribute</a><a href="license.html">License</a><a href="https://indieweb.org/">IndieWeb wiki</a></p></div></footer></body></html>

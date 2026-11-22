@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Decentralized social media | Join the IndieWeb</title><meta name="description" content="Explore Mastodon, Pixelfed, Bluesky, Lemmy and open protocols."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="site.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="index.html"><img src="favicon.svg" alt="">Join the IndieWeb</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="resources.html">Resources</a><a href="inspiration.html">Inspiration</a><button class="theme" type="button" data-toggle-theme aria-label="Switch color theme">☾</button></nav></div></header>
+<main id="main"><div class="wrap reading"><aside class="sidebar" aria-label="Chapter navigation"><h2>In the guide</h2><a href="guide.html">All chapters</a><a href="01-what-is-the-indieweb.html">01 · What is the IndieWeb?</a><a href="02-choose-a-platform.html">02 · Choose your platform</a><a href="03-domains-and-hosting.html">03 · Domains &amp; hosting</a><a href="04-learn-the-web.html">04 · Learn the web</a><a href="05-build-your-site.html">05 · Build your personal site</a><a href="06-publishing-and-feeds.html">06 · Publishing &amp; RSS feeds</a><a href="07-indieweb-standards.html">07 · IndieWeb standards</a><a href="08-community.html">08 · Community &amp; connections</a><a href="09-care-for-your-site.html">09 · Care for your site</a><a href="10-blogging-and-microblogging.html">10 · Blogging &amp; microblogging</a><a href="11-three-ways-to-start.html">11 · Three ways to start</a><a href="12-decentralized-social.html" aria-current="page">12 · Decentralized social media</a><a href="13-discovery.html">13 · Discover the small web</a><a href="14-personal-web-toolkit.html">14 · Personal web toolkit</a></aside><article class="article"><p class="eyebrow">Chapter 12 · Field guide</p><h1 id="12-decentralized-social-media">12. Decentralized social media</h1>
+<p>Decentralization distributes the operation of a network among multiple providers or participants. Federation lets independently run services communicate using a shared protocol. Open-source software alone doesn't make a service decentralized. And decentralized doesn't automatically mean safe, private, or independent of large operators.</p>
+<h2 id="choose-a-network-by-what-you-like-doing">Choose a network by what you like doing</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Main activity</th>
+<th>Network or protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://joinmastodon.org/">Mastodon</a></td>
+<td>Microblogging and conversation</td>
+<td>ActivityPub</td>
+</tr>
+<tr class="even">
+<td><a href="https://pixelfed.org/">Pixelfed</a></td>
+<td>Photos, albums and visual updates</td>
+<td>ActivityPub</td>
+</tr>
+<tr class="odd">
+<td><a href="https://join-lemmy.org/">Lemmy</a></td>
+<td>Topic communities and discussions</td>
+<td>ActivityPub</td>
+</tr>
+<tr class="even">
+<td><a href="https://joinpeertube.org/">PeerTube</a></td>
+<td>Video channels</td>
+<td>ActivityPub</td>
+</tr>
+<tr class="odd">
+<td><a href="https://misskey-hub.net/">Misskey</a></td>
+<td>Creative microblogging</td>
+<td>ActivityPub</td>
+</tr>
+<tr class="even">
+<td><a href="https://friendi.ca/">Friendica</a></td>
+<td>General social networking</td>
+<td>ActivityPub and other connections</td>
+</tr>
+<tr class="odd">
+<td><a href="https://writefreely.org/">WriteFreely</a></td>
+<td>Longer-form writing</td>
+<td>ActivityPub federation</td>
+</tr>
+<tr class="even">
+<td><a href="https://bsky.app/">Bluesky</a></td>
+<td>Microblogging and custom feeds</td>
+<td>AT Protocol</td>
+</tr>
+<tr class="odd">
+<td><a href="https://matrix.org/">Matrix</a></td>
+<td>Messaging and chat rooms</td>
+<td>Matrix protocol</td>
+</tr>
+</tbody>
+</table></div>
+<p>Matrix is a messaging network, not a public social feed. Bluesky is not a native ActivityPub platform. Cross-protocol bridges exist, but compatibility and visibility vary.</p>
+<h2 id="how-the-fediverse-works">How the fediverse works</h2>
+<p><a href="https://www.w3.org/TR/activitypub/">ActivityPub</a> allows compatible servers to exchange posts and interactions. For example, a Mastodon user may follow a Pixelfed account, even though they use different software. Not all features translate between applications, and servers can limit or block federation with others.</p>
+<p>To get started, choose a server from the platform's official directory. Read its rules, moderation policies, funding model, registration conditions and supported features. You generally don't need to operate your own server.</p>
+<ul>
+<li><a href="https://joinmastodon.org/servers">Mastodon server directory</a> and <a href="https://docs.joinmastodon.org/">documentation</a>.</li>
+<li><a href="https://pixelfed.org/">Pixelfed</a> includes server discovery and documentation.</li>
+<li><a href="https://join-lemmy.org/instances">Lemmy instances</a>, including <a href="https://lemmy.world/">Lemmy.World</a>.</li>
+<li><a href="https://joinpeertube.org/">PeerTube</a> provides information on joining video instances.</li>
+</ul>
+<p>Your account address identifies both you and your home server. Migration support differs across software. For instance, moving a Mastodon account can move followers where supported, but old posts do not automatically become posts on the new account. Export what you can.</p>
+<h2 id="bluesky-and-the-at-protocol">Bluesky and the AT Protocol</h2>
+<p>Bluesky uses <a href="https://atproto.com/">AT Protocol</a>, which separates several network roles, including personal data servers, network indexing and application views. It supports domain handles and aims to provide account portability and choice of feeds and moderation services. The Bluesky app and much of the network infrastructure may still depend on centralized operators in practice.</p>
+<p>Sign up through <a href="https://bsky.app/">Bluesky</a>, browse feeds and configure moderation preferences. If you own a domain, follow the <a href="https://bsky.social/about/blog/3-6-2023-domain-names-as-handles-in-bluesky">official domain handle guide</a>. A domain handle establishes a connection to that domain; it does not by itself host your social account or preserve all your data.</p>
+<h2 id="your-own-website-is-still-your-home-base">Your own website is still your home base</h2>
+<p>Keep original photos and writing on your website and share links on your social accounts. Put social profile links on your About page. Consider <a href="06-publishing-and-feeds.html">POSSE and feeds</a>, and optionally <a href="https://fed.brid.gy/">Bridgy Fed</a> to connect supported networks. You can also join ordinary forums, use email, or maintain a blogroll instead of running any social account.</p>
+<p>Public posts may be copied by other servers. Understand the limits of deletion, direct-message confidentiality, moderation and data export before posting sensitive information.</p>
+<nav class="chapter-nav" aria-label="Chapter navigation"><a href="11-three-ways-to-start.html">Previous chapter</a><a href="13-discovery.html">Next chapter</a></nav></article></div></main><footer class="foot"><div class="wrap"><p>Made for people who make the web. <br>Independent guide • CC BY 4.0</p><p><a href="https://github.com/kauz-hub/join-the-indieweb">GitHub repository</a><a href="contributing.html">Contribute</a><a href="license.html">License</a><a href="https://indieweb.org/">IndieWeb wiki</a></p></div></footer></body></html>
