@@ -20,6 +20,12 @@ The [IndieWeb](https://indieweb.org/) is a community built around personal websi
 | Find people and cool websites | [Community and discovery](guides/08-community.md) |
 | Keep my site safe and alive | [Privacy, accessibility and maintenance](guides/09-care-for-your-site.md) |
 | Find tools and tutorials | [Resource directory](RESOURCES.md) |
+| Understand blogs, microblogs and digital gardens | [Ways to publish](guides/10-blogging-and-microblogging.md) |
+| Compare Neocities, Nekoweb and Bear Blog | [Three beginner-friendly platforms](guides/11-three-ways-to-start.md) |
+| Explore alternatives to mainstream social media | [Decentralized social networks](guides/12-decentralized-social.md) |
+| Find independent websites beyond mainstream search | [Discover the small web](guides/13-discovery.md) |
+| Find ideas from real personal websites | [Inspiration gallery](INSPIRATION.md) |
+| Add guestbooks, music, forms and other features | [Personal web toolkit](guides/14-personal-web-toolkit.md) |
 
 ## Your first hour
 
